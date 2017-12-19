@@ -51,7 +51,15 @@ public class TestCase {
 	    double value;
 	    System.out.println("checking s4.b173352.InformationEstimator");
 	    myObject = new s4.b173352.InformationEstimator();
+	    myObject.setTarget("".getBytes());
+	    value = myObject.estimation();
+	    System.out.println("Double.MAX_VALUE = "+Double.MAX_VALUE);
+	    System.out.println(">not set space "+value);
 	    myObject.setSpace("3210321001230123".getBytes());
+	    System.out.println("space 3210321001230123");
+	    myObject.setTarget("".getBytes());
+	    value = myObject.estimation();
+	    System.out.println(">\"\" "+value);
 	    myObject.setTarget("0".getBytes());
 	    value = myObject.estimation();
 	    System.out.println(">0 "+value);
