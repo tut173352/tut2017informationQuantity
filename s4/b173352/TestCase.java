@@ -36,9 +36,30 @@ public class TestCase {
 	    int freq;
 	    System.out.println("checking s4.b173352.Frequencer");
 	    myObject = new s4.b173352.Frequencer();
+	    
+	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
+	    byte[] test = new byte[0];
+	    //Arrays.fill(test,(byte)0);
+	    myObject.setTarget(test);
+	    freq = myObject.frequency();
+	    System.out.print("\"\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
+	    if(-1 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+	    
+	    myObject.setSpace("".getBytes());
+	    myObject.setTarget("H".getBytes());
+	    freq = myObject.frequency();
+	    System.out.print("\"H\" in \"\" appears "+freq+" times. ");
+	    if(0 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+	    
 	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
 	    myObject.setTarget("H".getBytes());
 	    freq = myObject.frequency();
+	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
+	    if(4 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+
+	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
+	    myObject.setTarget("Hi".getBytes());
+	    freq = myObject.subByteFrequency(0,1);
 	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
 	    if(4 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
 	}
