@@ -20,7 +20,55 @@ public class Frequencer implements FrequencerInterface{
     byte [] myTarget;
     byte [] mySpace;
     public void setTarget(byte [] target) { myTarget = target;}
-    public void setSpace(byte []space) { mySpace = space; }
+
+    private int suffixCompare(int i, int j) {
+	if(mySpace[i] > mySpace[j]){
+	    return 1;
+	}
+	else if(mySpace[i] < mySpace[j]){
+	    return -1;
+	    
+	}
+	else{
+	    int val;
+	    val = suffixCompare(i+1,j+1);
+	    return val;
+	}
+    }
+    
+    
+    public void setSpace(byte []space) { //mySpace = space;
+	mySpace = space; if(mySpace.length>0) spaceReady = true;
+	suffixArray = new int[space.length];
+	// put all suffixes in suffixArray. Each suffix is expressed by one interger.
+	for(int i = 0; i< space.length; i++) {
+	   suffixArray[i] = i;
+	}
+	for(i=0;i<space.length;i++){
+	    for(j=i;j<space.length;j++){
+		int ans = suffixCompare(j,j+1);
+		if(ans == 1){
+		    int buff = suffixArray[j+1];
+		    suffixArray[j+1] = suffixArray[j];
+		    suffixArray[j] = buff;
+		}
+	    }
+	}
+    }
+
+    private int targetCompare(int i, int start, int end) {
+	//if(mySpace[i] == null && myTarget[start] != null)return
+	if(myTarget[start] == null)return 0;
+	if(mySpace[i]>myTarget[start]){
+	    return 1;
+	}else if(mySpace[i]<myTarget[start]){
+	    return -1;
+	}else{
+	    int ans = targetCompare(i+1,start+1,end);
+	    return ans;
+	}
+    }
+    
     public int frequency() {
 	int targetLength = myTarget.length;
 	int spaceLength = mySpace.length;

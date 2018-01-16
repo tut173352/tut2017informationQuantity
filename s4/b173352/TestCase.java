@@ -31,7 +31,7 @@ public interface InformationEstimatorInterface{
 
 public class TestCase {
     public static void main(String[] args) {
-	try {
+	try {//1
 	    FrequencerInterface  myObject;
 	    int freq;
 	    System.out.println("checking s4.b173352.Frequencer");
@@ -44,19 +44,49 @@ public class TestCase {
 	    freq = myObject.frequency();
 	    System.out.print("\"\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
 	    if(-1 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
-	    
+    }
+    catch(Exception e) {
+        System.out.println("Exception occurred: STOP");
+    }
+    try{//2
+        FrequencerInterface  myObject;
+        int freq;
+        System.out.println("checking s4.b173352.Frequencer");
+        myObject = new s4.b173352.Frequencer();
+        
 	    myObject.setSpace("".getBytes());
 	    myObject.setTarget("H".getBytes());
 	    freq = myObject.frequency();
 	    System.out.print("\"H\" in \"\" appears "+freq+" times. ");
 	    if(0 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
 	    
+    }
+    catch(Exception e) {
+        System.out.println("Exception occurred: STOP");
+    }
+        
+    try{//3
+        FrequencerInterface  myObject;
+        int freq;
+        System.out.println("checking s4.b173352.Frequencer");
+        myObject = new s4.b173352.Frequencer();
+            
 	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
 	    myObject.setTarget("H".getBytes());
 	    freq = myObject.frequency();
 	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
 	    if(4 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
-
+    }
+    catch(Exception e) {
+        System.out.println("Exception occurred: STOP");
+    }
+        
+    try{//4
+        FrequencerInterface  myObject;
+        int freq;
+        System.out.println("checking s4.b173352.Frequencer");
+        myObject = new s4.b173352.Frequencer();
+            
 	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
 	    myObject.setTarget("Hi".getBytes());
 	    freq = myObject.subByteFrequency(0,1);
@@ -66,8 +96,23 @@ public class TestCase {
 	catch(Exception e) {
 	    System.out.println("Exception occurred: STOP");
 	}
+        
+    try{//4
+        FrequencerInterface  myObject;
+        int freq;
+        System.out.println("checking s4.b173352.Frequencer");
+        myObject = new s4.b173352.Frequencer();
+        
+        myObject.setSpace("Hi Ho Hi Ho".getBytes());
+        myObject.setTarget("i Ho".getBytes());
+        System.out.print("\"i Ho\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
+        if(2 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+    }
+    catch(Exception e) {
+        System.out.println("Exception occurred: STOP");
+    }
 
-	try {
+	/*try {
 	    InformationEstimatorInterface myObject;
 	    double value;
 	    System.out.println("checking s4.b173352.InformationEstimator");
@@ -96,8 +141,8 @@ public class TestCase {
 	}
 	catch(Exception e) {
 	    System.out.println("Exception occurred: STOP");
-	}
-
+	}*/
+        
     }
 }	    
 	    
