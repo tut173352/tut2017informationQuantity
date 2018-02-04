@@ -142,7 +142,7 @@ public class TestCase {
 	}
 	catch(Exception e) {
 	    System.out.println("Exception occurred: STOP");
-	    }
+	}
         
     }
 }	    

@@ -51,7 +51,6 @@ public class Frequencer implements FrequencerInterface{
 	if(si > s) s = si;
 	if(sj > s) s = sj;
 	int n = mySpace.length - s;
-	//System.out.println("si="+si+" sj="+sj+" s="+s+" n="+n);
 	for(int k=0;k<n;k++) {
 	    if(mySpace[si+k]>mySpace[sj+k]) return 1;
 	    if(mySpace[si+k]<mySpace[sj+k]) return -1;
