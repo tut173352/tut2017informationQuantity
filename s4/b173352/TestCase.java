@@ -97,7 +97,7 @@ public class TestCase {
 	    System.out.println("Exception occurred: STOP");
 	}
         
-    try{//4
+    try{//5
         FrequencerInterface  myObject;
         int freq;
         System.out.println("checking s4.b173352.Frequencer");
@@ -105,6 +105,7 @@ public class TestCase {
         
         myObject.setSpace("Hi Ho Hi Ho".getBytes());
         myObject.setTarget("i Ho".getBytes());
+	freq = myObject.frequency();
         System.out.print("\"i Ho\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
         if(2 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
     }
@@ -112,7 +113,7 @@ public class TestCase {
         System.out.println("Exception occurred: STOP");
     }
 
-	/*try {
+    try {
 	    InformationEstimatorInterface myObject;
 	    double value;
 	    System.out.println("checking s4.b173352.InformationEstimator");
@@ -141,7 +142,7 @@ public class TestCase {
 	}
 	catch(Exception e) {
 	    System.out.println("Exception occurred: STOP");
-	}*/
+	    }
         
     }
 }	    
