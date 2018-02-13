@@ -91,14 +91,15 @@ public class Frequencer implements FrequencerInterface{
 	    }
 	    }*/
 	quicksort(space,0,suffixArray.length-1);
-	quicksort(space,0,suffixArray.length-1);
+	//quicksort(space,0,suffixArray.length-1);
 	//printSuffixArray();
+	
     }
 
     public void quicksort(byte []space, int start, int end){
-	int arraylength = start + end;
-	if(arraylength % 2 != 0)arraylength++;
-	int p = (arraylength) / 2;
+	//int arraylength = start + end;
+	//if(arraylength % 2 != 0)arraylength++;
+	int p = start/*(arraylength) / 2*/;
 	int more = start;
 	int less = end;
 	if(start < end){
