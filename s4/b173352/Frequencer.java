@@ -92,7 +92,7 @@ public class Frequencer implements FrequencerInterface{
 	    }*/
 	quicksort(space,0,suffixArray.length-1);
 	quicksort(space,0,suffixArray.length-1);
-	printSuffixArray();
+	//printSuffixArray();
     }
 
     public void quicksort(byte []space, int start, int end){
